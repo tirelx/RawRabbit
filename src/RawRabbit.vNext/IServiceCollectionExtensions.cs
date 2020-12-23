@@ -118,6 +118,15 @@ namespace RawRabbit.vNext
 			return collection;
 		}
 
+		/// <summary>
+		/// Alternative to ServiceCollectionContainerBuilderExtensions.BuildServiceProvider method
+		/// </summary>
+		/// <param name="services"></param>
+		/// <returns></returns>
+		/// <exception cref="MissingMethodException"></exception>
+		/// <remarks>
+		/// https://github.com/dotnet/efcore/issues/8498
+		/// </remarks>
 		public static IServiceProvider BuildProvider(this IServiceCollection services)
 		{
 			var buildServiceProviderDelegate =
