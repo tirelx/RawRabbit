@@ -37,7 +37,7 @@ namespace RawRabbit.vNext
 
 		public static Disposable.IBusClient CreateDefault(IServiceCollection services)
 		{
-			var serviceProvider = services.BuildServiceProvider();
+			var serviceProvider = services.BuildProvider();
 			var client = serviceProvider.GetService<IBusClient>();
 			return new Disposable.BusClient(client);
 		}
@@ -46,7 +46,7 @@ namespace RawRabbit.vNext
 		{
 			var serviceProvider = new ServiceCollection()
 				.AddRawRabbit<TMessageContext>(config, custom)
-				.BuildServiceProvider();
+				.BuildProvider();
 
 			var client = serviceProvider.GetService<IBusClient<TMessageContext>>();
 			return new BusClient<TMessageContext>(client);

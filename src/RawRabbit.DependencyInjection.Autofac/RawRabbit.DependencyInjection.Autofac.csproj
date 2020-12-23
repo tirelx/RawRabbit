@@ -1,28 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Wire up RawRabbit with Autofac!</Description>
     <AssemblyTitle>RawRabbit.DependencyInjection.Autofac</AssemblyTitle>
-    <VersionPrefix>1.10.4</VersionPrefix>
     <Authors>par.dahlman</Authors>
     <TargetFrameworks>netstandard1.5;net451</TargetFrameworks>
     <AssemblyName>RawRabbit.DependencyInjection.Autofac</AssemblyName>
     <PackageId>RawRabbit.DependencyInjection.Autofac</PackageId>
     <PackageTags>rabbitmq;raw;rawrabbit;autofac</PackageTags>
-    <PackageIconUrl>http://pardahlman.se/raw/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/pardahlman/RawRabbit</PackageProjectUrl>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<ExtPath>$(MSBuildThisFileDirectory)</ExtPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RawRabbit\RawRabbit.csproj" />
   </ItemGroup>
-
+	<Import Project="$(ExtPath)\..\..\common.props" />
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.1.0" />
   </ItemGroup>

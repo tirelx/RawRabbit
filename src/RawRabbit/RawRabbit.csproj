@@ -1,20 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>A modern framework for communication over RabbitMq.</Description>
     <AssemblyTitle>RawRabbit</AssemblyTitle>
-    <VersionPrefix>1.10.4</VersionPrefix>
     <Authors>pardahlman;enrique-avalon</Authors>
+		<PackageTags>rabbitmq;raw;rawrabbit;attributes</PackageTags>
     <TargetFrameworks>netstandard1.5;net451</TargetFrameworks>
-    <AssemblyName>RawRabbit</AssemblyName>
-    <PackageId>RawRabbit</PackageId>
-    <PackageTags>rabbitmq;raw;rawrabbit;attributes</PackageTags>
-    <PackageIconUrl>http://pardahlman.se/raw/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/pardahlman/RawRabbit</PackageProjectUrl>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<AssemblyName>RawRabbit</AssemblyName>
+		<PackageId>RawRabbit</PackageId>
+		<ExtPath>$(MSBuildThisFileDirectory)</ExtPath>
   </PropertyGroup>
+	<Import Project="$(ExtPath)\..\..\common.props" />
 
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="4.1.0" />

@@ -14,7 +14,7 @@ namespace RawRabbit.Extensions.Client
 			var provider = new ServiceCollection()
 				.AddRawRabbit(config: null, custom: custom)
 				.AddRawRabbitExtensions<MessageContext>()
-				.BuildServiceProvider();
+				.BuildProvider();
 			return new ExtendableBusClient(provider);
 		}
 
@@ -24,7 +24,7 @@ namespace RawRabbit.Extensions.Client
 			var provider = new ServiceCollection()
 				.AddRawRabbit(config: null, custom: custom)
 				.AddRawRabbitExtensions<MessageContext>()
-				.BuildServiceProvider();
+				.BuildProvider();
 			return new BusClient<TMessageContext>(new ExtendableBusClient<TMessageContext>(provider));
 		}
 
@@ -33,7 +33,7 @@ namespace RawRabbit.Extensions.Client
 			var provider = new ServiceCollection()
 				.AddRawRabbit(config: null, custom: custom)
 				.AddRawRabbitExtensions<MessageContext>()
-				.BuildServiceProvider();
+				.BuildProvider();
 			return new Disposable.BusClient(new ExtendableBusClient(provider));
 		}
 	}

@@ -1,0 +1,19 @@
+<Project>
+	<PropertyGroup>
+		<PackageIconUrl>http://pardahlman.se/raw/icon.png</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/tirelx/RawRabbit</PackageProjectUrl>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<Product>Модули Bars.MicroModules</Product>
+		<IncludeSymbols>true</IncludeSymbols>
+		<RepositoryType>git</RepositoryType>
+		<ExtPath>$(MSBuildThisFileDirectory)</ExtPath>
+		<EmbedAllSources>True</EmbedAllSources>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<NoWarn>NU5048</NoWarn>
+		<VersionPrefix>1.20.1</VersionPrefix>
+	</PropertyGroup>
+</Project>

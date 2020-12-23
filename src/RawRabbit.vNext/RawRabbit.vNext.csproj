@@ -2,23 +2,18 @@
 
   <PropertyGroup>
     <Description>Take advantage of vNext for your RawRabbit setup. Extension for IServiceCollection, IConfiguration support and much more!</Description>
-    <VersionPrefix>1.10.4</VersionPrefix>
     <Authors>pardahlman;enrique-avalon</Authors>
     <TargetFrameworks>netstandard1.5;net451;netstandard2.0</TargetFrameworks>
     <AssemblyName>RawRabbit.vNext</AssemblyName>
     <PackageId>RawRabbit.vNext</PackageId>
     <PackageTags>rabbitmq;raw;rawrabbit;attributes</PackageTags>
-    <PackageIconUrl>http://pardahlman.se/raw/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/pardahlman/RawRabbit</PackageProjectUrl>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<ExtPath>$(MSBuildThisFileDirectory)</ExtPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RawRabbit\RawRabbit.csproj" />
   </ItemGroup>
-
+	<Import Project="$(ExtPath)\..\..\common.props" />
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>

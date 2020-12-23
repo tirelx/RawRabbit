@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -115,6 +116,20 @@ namespace RawRabbit.vNext
 			custom?.Invoke(collection);
 
 			return collection;
+		}
+
+		public static IServiceProvider BuildProvider(this IServiceCollection services)
+		{
+			var buildServiceProviderDelegate =
+				typeof(ServiceCollectionContainerBuilderExtensions).GetMethod(
+					nameof(ServiceCollectionContainerBuilderExtensions.BuildServiceProvider),
+					new[] {typeof(IServiceCollection)});
+			if (buildServiceProviderDelegate is null)
+			{
+				throw new MissingMethodException(
+					$"Method BuildServiceProvider(IServiceCollection) not found");
+			}
+			return buildServiceProviderDelegate.Invoke(null, new object[] {services}) as IServiceProvider;
 		}
 	}
 }

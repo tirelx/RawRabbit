@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAAF8928-DAFA-47A7-8E43-FD20590CCF6E}"
 	ProjectSection(SolutionItems) = preProject
 		NuGet.Config = NuGet.Config
+		common.props = common.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2F91E22A-AEBA-4BEF-9A03-C8232830F697}"

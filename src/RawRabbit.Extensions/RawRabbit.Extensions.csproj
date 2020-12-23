@@ -3,26 +3,19 @@
   <PropertyGroup>
     <Description>Make the most of RawRabbit with these extensions</Description>
     <AssemblyTitle>RawRabbit.Extensions</AssemblyTitle>
-    <VersionPrefix>1.10.4</VersionPrefix>
     <Authors>par.dahlman</Authors>
     <TargetFrameworks>netstandard1.5;net451</TargetFrameworks>
     <AssemblyName>RawRabbit.Extensions</AssemblyName>
     <PackageId>RawRabbit.Extensions</PackageId>
     <PackageTags>rabbitmq;raw;rawrabbit;extensions</PackageTags>
-    <PackageIconUrl>http://pardahlman.se/raw/icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/pardahlman/RawRabbit</PackageProjectUrl>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<ExtPath>$(MSBuildThisFileDirectory)</ExtPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RawRabbit\RawRabbit.csproj" />
     <ProjectReference Include="..\RawRabbit.vNext\RawRabbit.vNext.csproj" />
   </ItemGroup>
-
+	<Import Project="$(ExtPath)\..\..\common.props" />
   <ItemGroup>
     <PackageReference Include="System.Net.Http" Version="4.3.0" />
   </ItemGroup>

@@ -11,6 +11,7 @@ using RawRabbit.Extensions.MessageSequence.Repository;
 using RawRabbit.Extensions.TopologyUpdater.Core;
 using RawRabbit.Extensions.TopologyUpdater.Core.Abstraction;
 using RawRabbit.Logging;
+using RawRabbit.vNext;
 
 namespace RawRabbit.Extensions.Client
 {
@@ -34,7 +35,7 @@ namespace RawRabbit.Extensions.Client
 				/* Topology Updater */
 				.AddTransient<IBindingProvider, BindingProvider>()
 				.AddTransient<IExchangeUpdater, ExchangeUpdater>()
-				.AddSingleton<IBusClient<TMessageContext>>(c => new ExtendableBusClient<TMessageContext>(collection.BuildServiceProvider()));
+				.AddSingleton<IBusClient<TMessageContext>>(c => new ExtendableBusClient<TMessageContext>(collection.BuildProvider()));
 			return collection;
 		}
 
@@ -46,7 +47,7 @@ namespace RawRabbit.Extensions.Client
 				.AddSingleton<IBusClient>(c =>
 				{
 					LogManager.CurrentFactory = c.GetService<ILoggerFactory>();
-					return new ExtendableBusClient(collection.BuildServiceProvider());
+					return new ExtendableBusClient(collection.BuildProvider());
 				});
 		}
 
@@ -56,7 +57,7 @@ namespace RawRabbit.Extensions.Client
 				.AddSingleton<IBusClient>(provider =>
 				{
 					LogManager.CurrentFactory = provider.GetService<ILoggerFactory>();
-					return new ExtendableBusClient(collection.BuildServiceProvider());
+					return new ExtendableBusClient(collection.BuildProvider());
 				});
 		}
 
